@@ -4,11 +4,11 @@ using Mission6.Models;
 
 namespace Mission6.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : Controller // Inherits the Controller class
     {
         private readonly MovieDbContext _context;
 
-        public HomeController(MovieDbContext context)
+        public HomeController(MovieDbContext context) // Constructor
         {
             _context = context;
         }

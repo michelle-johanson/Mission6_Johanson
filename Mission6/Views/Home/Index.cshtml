@@ -1,5 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Home";
+    // Content for Home Page
 }
 
 <div class="text-center">
@@ -9,3 +10,16 @@
          class="img-fluid rounded mt-3"
          style="max-width: 400px;" />
 </div>
+
+<br />
+
+<div>
+    <a asp-controller="Home" asp-action="AddMovieToCollection">Add a Movie to My Collection!</a>
+</div>
+
+
+@* 
+    Tag Helpers build a link for us
+    asp-controller:"Home" - 
+*@
+
