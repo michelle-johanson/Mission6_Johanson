@@ -13,7 +13,7 @@ namespace Mission6.Models
         public string Category { get; set; } = string.Empty;
 
         [Required]
-        public int Year { get; set; }
+        public string Year { get; set; } = string.Empty;
 
         [Required]
         public string Director { get; set; } = string.Empty;
