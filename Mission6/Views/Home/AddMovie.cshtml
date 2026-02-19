@@ -10,29 +10,31 @@
 <div class="row">
     <div class="col-md-6">
         <form asp-action="AddMovie" method="post">
+             @*method="post" makes it not pass results as a parameter, 
+            instead as a HttpPost action in the HomeController*@
 
             <div class="mb-3">
                 <label asp-for="Title" class="form-label"></label>
-                <input asp-for="Title" class="form-control" />
+                <input asp-for="Title" class="form-control"/>
                 @* With asp-for, if the user click on the label it will automatically focus on the input box *@
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
 
             <div class="mb-3">
                 <label asp-for="Category" class="form-label"></label>
-                <input asp-for="Category" class="form-control" />
+                <input asp-for="Category" class="form-control"/>
                 <span asp-validation-for="Category" class="text-danger"></span>
             </div>
 
             <div class="mb-3">
                 <label asp-for="Year" class="form-label"></label>
-                <input asp-for="Year" class="form-control" placeholder="e.g. 1985 or 2001-2002" />
+                <input asp-for="Year" class="form-control" placeholder="e.g. 1985 or 2001-2002"/>
                 <span asp-validation-for="Year" class="text-danger"></span>
             </div>
 
             <div class="mb-3">
                 <label asp-for="Director" class="form-label"></label>
-                <input asp-for="Director" class="form-control" />
+                <input asp-for="Director" class="form-control"/>
                 <span asp-validation-for="Director" class="text-danger"></span>
             </div>
 
@@ -49,18 +51,18 @@
             </div>
 
             <div class="mb-3 form-check">
-                <input asp-for="Edited" class="form-check-input" type="checkbox" />
+                <input asp-for="Edited" class="form-check-input" type="checkbox"/>
                 <label asp-for="Edited" class="form-check-label">Edited Version</label>
             </div>
 
             <div class="mb-3">
                 <label asp-for="LentTo" class="form-label">Lent To (optional)</label>
-                <input asp-for="LentTo" class="form-control" />
+                <input asp-for="LentTo" class="form-control"/>
             </div>
 
             <div class="mb-3">
                 <label asp-for="Notes" class="form-label">Notes (optional, max 25 characters)</label>
-                <input asp-for="Notes" class="form-control" maxlength="25" />
+                <input asp-for="Notes" class="form-control" maxlength="25"/>
                 <span asp-validation-for="Notes" class="text-danger"></span>
             </div>
 

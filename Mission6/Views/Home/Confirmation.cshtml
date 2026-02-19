@@ -2,9 +2,25 @@
     ViewData["Title"] = "Movie Added";
 }
 
-<div class="text-center mt-5">
-    <h1>🎬 Movie Added Successfully!</h1>
-    <p class="lead">The movie has been added to Joel's collection.</p>
-    <a asp-action="AddMovie" class="btn btn-primary">Add Another Movie</a>
-    <a asp-action="Index" class="btn btn-secondary ms-2">Go Home</a>
-</div>
+@model Movie
+
+@if (Model.Edited == false)
+{
+    // Conditional Text
+    <div class="text-center mt-5">
+        <h1>Movie Added Successfully!</h1>
+        <p class="lead">@Model.Title has been added to Joel's collection.</p>
+        <a asp-action="AddMovie" class="btn btn-primary">Add Another Movie</a>
+        <a asp-action="Index" class="btn btn-secondary ms-2">Go Home</a>
+    </div>
+}
+else
+{
+    <div class="text-center mt-5">
+        <h1>Movie Added Successfully!</h1>
+        <p class="lead">@Model.Title has been added to Joel's collection.</p>
+        <p>This movie has been edited</p>
+        <a asp-action="AddMovie" class="btn btn-primary">Add Another Movie</a>
+        <a asp-action="Index" class="btn btn-secondary ms-2">Go Home</a>
+    </div>
+}

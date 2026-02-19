@@ -34,21 +34,11 @@ namespace Mission6.Controllers
 
         // Movie entry form - POST
         [HttpPost]
-        public IActionResult AddMovie(Movie movie)
+        public IActionResult AddMovie(Movie response)
         {
-            if (ModelState.IsValid)
-            {
-                _context.Movies.Add(movie);
-                _context.SaveChanges();
-                return RedirectToAction("Confirmation");
-            }
-            return View(movie);
-        }
-
-        // Confirmation page after adding a movie
-        public IActionResult Confirmation()
-        {
-            return View();
+            _context.Movies.Add(response);
+            _context.SaveChanges();
+            return View("Confirmation", response); // takes user to confirmation view after submission
         }
     }
 }
