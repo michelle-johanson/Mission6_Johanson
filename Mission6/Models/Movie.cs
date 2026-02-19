@@ -6,6 +6,8 @@ namespace Mission6.Models
 {
     public class Movie // Becomes a Table
     {
+        [Key]
+        [Required]
         public int MovieId { get; set; } // Allows all info to have a getter and a setter
 
         [Required]
@@ -14,10 +16,10 @@ namespace Mission6.Models
         [Required]
         public string Category { get; set; } = string.Empty;
 
+        // [Range(0,130)] -- Can add a range
         [Required]
         public string Year { get; set; } = string.Empty; // Stored as string to make ranges easy
 
-        [Required]
         public string Director { get; set; } = string.Empty;
 
         [Required]

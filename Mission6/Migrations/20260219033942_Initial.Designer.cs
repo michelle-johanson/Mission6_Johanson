@@ -10,8 +10,8 @@ using Mission6.Data;
 namespace Mission6.Migrations
 {
     [DbContext(typeof(MovieDbContext))]
-    [Migration("20260217160209_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20260219033942_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -51,8 +51,9 @@ namespace Mission6.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("Year")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("Year")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
                     b.HasKey("MovieId");
 

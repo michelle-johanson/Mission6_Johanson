@@ -10,8 +10,8 @@ using Mission6.Data;
 namespace Mission6.Migrations
 {
     [DbContext(typeof(MovieDbContext))]
-    [Migration("20260217161626_UpdateYearToString")]
-    partial class UpdateYearToString
+    [Migration("20260219042302_TakeTwo")]
+    partial class TakeTwo
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
