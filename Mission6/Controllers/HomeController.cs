@@ -40,5 +40,15 @@ namespace Mission6.Controllers
             _context.SaveChanges();
             return View("Confirmation", response); // takes user to confirmation view after submission
         }
+
+        public IActionResult ViewMovies()
+        {
+            // Linq
+            var movies = _context.Movies
+                .Where(x => x.Edited == false)
+                .OrderBy(x => x.Title).ToList();
+            
+            return View(movies);
+        }
     }
 }
