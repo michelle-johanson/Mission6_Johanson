@@ -1,0 +1,13 @@
+@model Mission6.Models.Movie
+
+<h2>Delete Movie</h2>
+
+<p>Are you sure you want to delete <strong>@Model.Title</strong>?</p>
+
+<form method="post" asp-action="Delete">
+    <!-- Hidden field sends the full movie ID back to the controller -->
+    <input type="hidden" asp-for="MovieId" />
+    <button type="submit" class="btn btn-danger">Yes, Delete</button>
+    <a class="btn btn-secondary" asp-action="ViewMovies">Cancel</a>
+</form>
+```
