@@ -1,0 +1,41 @@
+@model List<Mission6.Models.Movie>
+
+<h2 class="mt-4 mb-3">Joel's Movie Collection</h2>
+
+<table class="table table-bordered table-striped table-hover">
+    <thead class="table-dark">
+    <tr>
+        <th>Title</th>
+        <th>Category</th>
+        <th>Year</th>
+        <th>Director</th>
+        <th>Rating</th>
+        <th>Edited</th>
+        <th>Copied to Plex</th>
+        <th>Lent To</th>
+        <th>Notes</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.Title</td>
+            <td>@x.Category</td>
+            <td>@x.Year</td>
+            <td>@x.Director</td>
+            <td>@x.Rating</td>
+            <td>@x.Edited</td>
+            <td>@x.CopiedToPlex</td>
+            <td>@x.LentTo</td>
+            <td>@x.Notes</td>
+            <td>
+                <!-- Pass the movie's ID through the URL -->
+                <a class="btn btn-info btn-sm" asp-controller="Home" asp-action="Edit" asp-route-id="@x.MovieId">Edit</a>
+                <a class="btn btn-danger btn-sm" asp-controller="Home" asp-action="Delete" asp-route-id="@x.MovieId">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
